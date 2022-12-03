@@ -1,5 +1,3 @@
-import inquirer
-import questionary
 from pprint import pprint
 
 i = int(input("Enter the first number: "))
@@ -9,20 +7,19 @@ print("This is the second number: ", j)
 print("Here a list of available operations")
 print("'AND', 'OR', 'NAND', 'XOR', 'XNOR'")
 answers = str(input("Enter the particular operation: "))
-options = [inquirer.List('operation', message="what is your particular operation ",
-                         choices=['AND', 'OR', 'NAND', 'XOR', 'XNOR']), ]
-answers = inquirer.prompt(options)
-
-pprint(answers)
 
 
-def userPick():
-    if answers['operation'] == 'AND':
+def userPick():  #
+    if answers.upper() == 'AND':
         print("Output of ", i, " AND ", j, "is", AND(i, j))
-    elif answers['operation'] == 'OR':
+    elif answers.upper() == 'OR':
         print("Output of ", i, " OR ", j, "is", OR(i, j))
-    elif answers['operation'] == 'NAND':
+    elif answers.upper() == 'NAND':
         print("Output of ", i, " NAND ", j, "is", NAND(i, j))
+    elif answers.upper() == 'XOR':
+        print("Output of ", i, " XOR ", j, "is", XOR(i, j))
+    elif answers.upper() == 'XNOR':
+        print("Output of ", i, " XNOR ", j, "is", XNOR(i, j))
 
 
 def AND(i, j):
@@ -49,8 +46,4 @@ def XNOR(i, j):
     return NOT(XOR(i, j))
 
 
-print("Output of ", i, " AND ", j, "is", AND(i, j))
-print("Output of ", i, " OR ", j, "is", OR(i, j))
-print("Output of ", i, " NANT ", j, "is", NAND(i, j))
-print("Output of ", i, " XOR ", j, "is", XOR(i, j))
-print("Output of ", i, " XNOR ", j, "is", XNOR(i, j))
+pprint(userPick())
