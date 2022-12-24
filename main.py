@@ -4,7 +4,7 @@ i = int(input("Enter the first number: "))
 j = int(input("Enter the second number: "))
 # The line below will show the user what their number will be in binary
 print("This is the first number in binary is : ", bin(i)[2:])
-print("This is the second number: ",  bin(j)[2:])
+print("This is the second number in binary is : ",  bin(j)[2:])
 print("Here a list of available operations")
 print("'AND', 'OR', 'NAND', 'XOR', 'XNOR'")
 answers = str(input("Enter the particular operation: "))
