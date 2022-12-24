@@ -2,8 +2,9 @@ from pprint import pprint
 
 i = int(input("Enter the first number: "))
 j = int(input("Enter the second number: "))
-print("This is the first number: ", i)
-print("This is the second number: ", j)
+# The line below will show the user what their number will be in binary
+print("This is the first number in binary is : ", bin(i)[2:])
+print("This is the second number: ",  bin(j)[2:])
 print("Here a list of available operations")
 print("'AND', 'OR', 'NAND', 'XOR', 'XNOR'")
 answers = str(input("Enter the particular operation: "))
@@ -11,15 +12,15 @@ answers = str(input("Enter the particular operation: "))
 
 def userPick():  #
     if answers.upper() == 'AND':
-        print("Output of ", i, " AND ", j, "is", AND(i, j))
+        print("Output of ", i, " AND ", j, "is", bin(AND(i, j)))
     elif answers.upper() == 'OR':
-        print("Output of ", i, " OR ", j, "is", OR(i, j))
+        print("Output of ", i, " OR ", j, "is", bin(OR(i, j)))
     elif answers.upper() == 'NAND':
-        print("Output of ", i, " NAND ", j, "is", NAND(i, j))
+        print("Output of ", i, " NAND ", j, "is", bin(NAND(i, j)))
     elif answers.upper() == 'XOR':
-        print("Output of ", i, " XOR ", j, "is", XOR(i, j))
+        print("Output of ", i, " XOR ", j, "is", bin(XOR(i, j)))
     elif answers.upper() == 'XNOR':
-        print("Output of ", i, " XNOR ", j, "is", XNOR(i, j))
+        print("Output of ", i, " XNOR ", j, "is", bin(XNOR(i, j)))
 
 
 def AND(i, j):
