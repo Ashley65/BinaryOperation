@@ -1,5 +1,4 @@
-from pprint import pprint
-
+# The line below is asking the user to input two number
 i = int(input("Enter the first number: "))
 j = int(input("Enter the second number: "))
 # The line below will show the user what their number will be in binary
@@ -16,11 +15,11 @@ def userPick():  #
     elif answers.upper() == 'OR':
         print("Output of ", i, " OR ", j, "is", bin(OR(i, j)))
     elif answers.upper() == 'NAND':
-        print("Output of ", i, " NAND ", j, "is", bin(NAND(i, j)))
+        print("Output of ", i, " NAND ", j, "is", bin(NAND(i, j)[2:]))
     elif answers.upper() == 'XOR':
-        print("Output of ", i, " XOR ", j, "is", bin(XOR(i, j)))
+        print("Output of ", i, " XOR ", j, "is", bin(XOR(i, j)[2:]))
     elif answers.upper() == 'XNOR':
-        print("Output of ", i, " XNOR ", j, "is", bin(XNOR(i, j)))
+        print("Output of ", i, " XNOR ", j, "is", bin(XNOR(i, j)[2:]))
 
 
 def AND(i, j):
@@ -47,4 +46,4 @@ def XNOR(i, j):
     return NOT(XOR(i, j))
 
 
-pprint(userPick())
+print(userPick())
